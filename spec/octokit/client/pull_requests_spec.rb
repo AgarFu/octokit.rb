@@ -148,7 +148,7 @@ describe Octokit::Client::PullRequests do
     end
 
     it "merges the pull request without commit_message" do
-      request = stub_put(github_url("/repos/api-playground/api-sandbox/pulls/123/merge")).with(:body => {:commit_message=>''})
+      request = stub_put(github_url("/repos/api-playground/api-sandbox/pulls/123/merge")).with(:body => {})
       @client.merge_pull_request("api-playground/api-sandbox", 123, nil)
       assert_requested request
     end
